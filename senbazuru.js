@@ -55,7 +55,7 @@ function init() {
   controls = new PointerLockControls(camera, document.body);
 
   // Identify the html divs for the overlays
-  const blocker = document.getElementById("blocker");
+  const blocker = document.getElementById("intro");
   const instructions = document.getElementById("instructions");
 
   // Listen for clicks and respond by removing overlays and starting mouse look controls
