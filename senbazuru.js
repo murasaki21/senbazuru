@@ -7,6 +7,10 @@
 import * as THREE from "./buildJS/three.module.js";
 // Import pointer lock controls
 import { PointerLockControls } from "./sourceJS/PointerLockControls.js";
+//Import GLTF Loader
+import {
+  GLTFLoader
+} from "./sourceJS/GLTFLoader.js";
 
 // Establish variables
 let camera, scene, renderer, controls;
@@ -43,7 +47,7 @@ function init() {
 
   // Define basic scene parameters
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xffffff);
+  scene.background = new THREE.Color(0xFFd6FF);
   scene.fog = new THREE.Fog(0xffffff, 0, 750);
 
   // Define scene lighting
