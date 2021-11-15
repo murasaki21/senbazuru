@@ -4,7 +4,7 @@
 
 // Import required source code
 // Import three.js core
-import * as THREE from "./build/three.module.js";
+import * as THREE from "./buildJS/three.module.js";
 // Import pointer lock controls
 import { PointerLockControls } from "./sourceJS/PointerLockControls.js";
 
