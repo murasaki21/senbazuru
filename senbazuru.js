@@ -4,13 +4,13 @@
 
 // Import required source code
 // Import three.js core
-import * as THREE from "../buildJS/three.module.js";
+import * as THREE from "../senbazuru/buildJS/three.module.js";
 // Import pointer lock controls
-import { PointerLockControls } from "../sourceJS/PointerLockControls.js";
+import { PointerLockControls } from "../senbazuru/sourceJS/PointerLockControls.js";
 //Import GLTF Loader
 import {
   GLTFLoader
-} from "../sourceJS/GLTFLoader.js";
+} from "../senbazuru/sourceJS/GLTFLoader.js";
 
 // Establish variables
 let camera, scene, renderer, controls;
