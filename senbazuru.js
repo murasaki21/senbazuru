@@ -162,6 +162,7 @@ function init() {
     position.setXYZ(i, vertex.x, vertex.y, vertex.z);
   }
 
+//---floor code---//
   floorGeometry = floorGeometry.toNonIndexed(); // ensure each face has unique vertices
 
   position = floorGeometry.attributes.position;
