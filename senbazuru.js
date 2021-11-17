@@ -230,6 +230,7 @@ var newMaterial2 = new THREE.MeshStandardMaterial({
   color: 0x9dc7ff
 });
 
+let mesh2;
 // Load static model, add material, and add it to the scene
 const loader2 = new GLTFLoader().load(
   "../senbazuru/GLTFS/AnimatedCrane.glb",
@@ -248,18 +249,14 @@ const loader2 = new GLTFLoader().load(
 
     for (let i = 0; i < 1000; i++) {
       const mesh2Material = new THREE.MeshStandardMaterial({
-        specular: 0xffffff,
+        //specular: 0xffffff,
         flatShading: true,
         vertexColors: true
       });
     // Add model to scene
     scene.add(mesh2);
-    }
-      undefined,
-      function(error) {
-        console.error(error);
       }
-    );
+    });
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
