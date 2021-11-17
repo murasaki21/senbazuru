@@ -203,7 +203,8 @@ function init() {
     new THREE.Float32BufferAttribute(colorsBox, 3)
   );
 
-  for (let i = 0; i < 500; i++) {
+//number of boxes/cranes
+  for (let i = 0; i < 1000; i++) {
     const boxMaterial = new THREE.MeshPhongMaterial({
       specular: 0xffffff,
       flatShading: true,
