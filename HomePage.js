@@ -48,7 +48,7 @@ function init() {
 
   // Load preanimated model, add material, and add it to the scene
   const loader = new GLTFLoader().load(
-    "../senbazuru/gltfs/AnimatedCrane.glb",
+    "../senbazuru/GLTFS/AnimatedCrane.glb",
     function(gltf) {
       gltf.scene.traverse(function(child) {
         if (child.isMesh) {
