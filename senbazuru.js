@@ -243,7 +243,7 @@ const loader2 = new GLTFLoader().load(
     });
     // set position and scale
     mesh2 = gltf.scene;
-    mesh2.position.set(1, 0, 200);
+    mesh2.position.set(0, 0, 300);
     mesh2.rotation.set(0, 0, 0);
     mesh2.scale.set(3, 3, 3);
 
