@@ -279,7 +279,7 @@ function init() {
 
   // Listen for window resizing
   window.addEventListener("resize", onWindowResize);
-}
+//}
 
 // Window resizing function
 function onWindowResize() {
