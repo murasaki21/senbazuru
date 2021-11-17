@@ -1,4 +1,4 @@
-import * as THREE from "../senbazuru/buildJS/three.module.js";
+import * as THREE from "../buildJS/three.module.js";
 
 // Import add-ons for glTF models, orbit controls, and font loader
 import {
