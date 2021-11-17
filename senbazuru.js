@@ -245,7 +245,7 @@ const loader2 = new GLTFLoader().load(
     mesh2 = gltf.scene;
     mesh2.position.set(-4, 0, 100);
     mesh2.rotation.set(0, 0, 0);
-    mesh2.scale.set(1, 1, 1);
+    mesh2.scale.set(3, 3, 3);
 
     for (let i = 0; i < 1000; i++) {
       const mesh2Material = new THREE.MeshStandardMaterial({
