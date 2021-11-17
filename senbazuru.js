@@ -249,7 +249,7 @@ function init() {
     undefined,
     function(error) {
       console.error(error);
-    })
+    }
     scene.add(mesh);
     objects.push(mesh);
   );
