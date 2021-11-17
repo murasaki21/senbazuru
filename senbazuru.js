@@ -250,9 +250,12 @@ function init() {
     function(error) {
       console.error(error);
     }
-    scene.add(mesh);
-    objects.push(mesh);
   );
+
+  scene.add(mesh);
+  objects.push(mesh);
+}
+
   // Define animate loop
   function animate() {
     controls.update();
