@@ -217,7 +217,7 @@ function init() {
 
     const box = new THREE.Mesh(boxGeometry, boxMaterial);
     box.position.x = Math.floor(Math.random() * 20 - 10) * 20;
-    box.position.y = Math.floor(Math.random() * 20) * 20 + 10;
+    box.position.y = Math.floor(Math.random() * 20) * 20 * 10;
     box.position.z = Math.floor(Math.random() * 20 - 10) * 20;
 
     // Insert completed boxes into the scene
