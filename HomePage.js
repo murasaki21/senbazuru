@@ -1,4 +1,4 @@
-import * as THREE from "./buildJS/three.module.js";
+import * as THREE from "..senbazuru/buildJS/three.module.js";
 
 // Import add-ons for glTF models, orbit controls, and font loader
 import {
@@ -34,7 +34,7 @@ function init() {
   );
   renderer = new THREE.WebGLRenderer();
   //changes space color
-  renderer.setClearColor(0x000000);
+  renderer.setClearColor(0xFFd6FF);
   //changes canvas size
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
@@ -57,9 +57,9 @@ function init() {
       });
       // set position and scale
       mesh = gltf.scene;
-      mesh.position.set(4, 0, 0);
+      mesh.position.set(1, -1, 0);
       mesh.rotation.set(0, 0, 0);
-      mesh.scale.set(2, 2, 2);
+      mesh.scale.set(3, 3, 3);
       // Add model to scene
       scene.add(mesh);
       //Check for and play animation frames
