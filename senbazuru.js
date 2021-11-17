@@ -59,7 +59,7 @@ function init() {
   controls = new PointerLockControls(camera, document.body);
 
   // Identify the html divs for the overlays
-  const blocker = document.getElementById("intro");
+  const intro = document.getElementById("intro");
   const instructions = document.getElementById("instructions");
 
   // Listen for clicks and respond by removing overlays and starting mouse look controls
@@ -70,11 +70,11 @@ function init() {
   // Remove overlays and begin controls on click
   controls.addEventListener("lock", function() {
     instructions.style.display = "none";
-    blocker.style.display = "none";
+    intro.style.display = "none";
   });
   // Restore overlays and stop controls on esc
   controls.addEventListener("unlock", function() {
-    blocker.style.display = "block";
+    intro.style.display = "block";
     instructions.style.display = "";
   });
   // Add controls to scene
@@ -187,7 +187,7 @@ function init() {
 
 
   // Generate objects (cubes) *replace with cranes*
-  const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
+  /*const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
 
   position = boxGeometry.attributes.position;
   const colorsBox = [];
@@ -222,6 +222,50 @@ function init() {
     // Insert completed boxes into the scene
     scene.add(box);
     objects.push(box);
+  }*/
+  // Load preanimated model, add material, and add it to the scene
+  const loader = new GLTFLoader().load(
+    "./gltfs/AnimatedCrane.glb",
+    function(gltf) {
+      gltf.scene.traverse(function(child) {
+        if (child.isMesh) {
+          child.material = newMaterial;
+        }
+      });
+      // set position and scale
+      mesh = gltf.scene;
+      mesh.position.set(4, 0, 0);
+      mesh.rotation.set(0, 0, 0);
+      mesh.scale.set(2, 2, 2);
+      // Add model to scene
+      scene.add(mesh);
+      //Check for and play animation frames
+      mixer = new THREE.AnimationMixer(mesh);
+      gltf.animations.forEach((clip) => {
+        mixer.clipAction(clip).play();
+      });
+
+    },
+    undefined,
+    function(error) {
+      console.error(error);
+    }
+    scene.add(mesh);
+    objects.push(mesh);
+  );
+  // Define animate loop
+  function animate() {
+    controls.update();
+    requestAnimationFrame(animate);
+    var delta = clock.getDelta();
+    if (mixer) mixer.update(delta);
+    render();
+  }
+
+  // Define the render loop
+  function render() {
+    renderer.render(scene, camera);
+    manualAnimation();
   }
 
   // Define Rendered and html document placement
