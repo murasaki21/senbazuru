@@ -187,7 +187,7 @@ function init() {
   scene.add(floor);
 
   // Generate objects (cubes) *replace with cranes*
-  const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
+  /*const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
 
   position = boxGeometry.attributes.position;
   const colorsBox = [];
@@ -223,7 +223,30 @@ function init() {
     // Insert completed boxes into the scene
     scene.add(box);
     objects.push(box);
-  }
+  }*/
+
+  // Material to be added to static model
+var newMaterial2 = new THREE.MeshStandardMaterial({
+  color: 0x9dc7ff
+});
+
+// Load static model, add material, and add it to the scene
+const loader2 = new GLTFLoader().load(
+  "../senbazuru/GLTFS/AnimatedCrane.glb",
+  function(gltf) {
+    // Scan loaded model for mesh and apply defined material if mesh is present
+    gltf.scene.traverse(function(child) {
+      if (child.isMesh) {
+        child.material = newMaterial2;
+      }
+    });
+    // set position and scale
+    mesh2 = gltf.scene;
+    mesh2.position.set(-4, 0, 100);
+    mesh2.rotation.set(0, 0, 0);
+    mesh2.scale.set(1, 1, 1);
+    // Add model to scene
+    scene.add(mesh2);
 
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({ antialias: true });
