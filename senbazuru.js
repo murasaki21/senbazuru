@@ -49,7 +49,7 @@ function init() {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0xFFd6FF);
   //color of the world edge
-  scene.fog = new THREE.Fog(0xFFd6FF, 0, 750);
+  //scene.fog = new THREE.Fog(0xFFd6FF, 0, 750);
 
   // Define scene lighting
   const light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
