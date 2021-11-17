@@ -254,7 +254,12 @@ const loader2 = new GLTFLoader().load(
       });
     // Add model to scene
     scene.add(mesh2);
-
+    },
+      undefined,
+      function(error) {
+        console.error(error);
+      }
+    );
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
