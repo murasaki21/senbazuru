@@ -1,12 +1,12 @@
-import * as THREE from "../senbarazu/buildJS/three.module.js";
+import * as THREE from "../buildJS/three.module.js";
 
 // Import add-ons for glTF models, orbit controls, and font loader
 import {
   OrbitControls
-} from "../senbarazu/sourceJS/OrbitControls.js";
+} from "../sourceJS/OrbitControls.js";
 import {
   GLTFLoader
-} from "../senbarazu/sourceJS/GLTFLoader.js";
+} from "../sourceJS/GLTFLoader.js";
 
 let container, scene, camera, renderer, mesh, mesh2, mixer, controls, clock;
 
