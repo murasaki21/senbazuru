@@ -188,7 +188,7 @@ function init() {
 
   // Crane image
   // Load image as texture
-  const texture = new THREE.TextureLoader().load( '../senbazuru/cranes.jpg' );
+  const texture = new THREE.TextureLoader().load( "../senbazuru/cranes.JPG" );
   // Immediately use the texture for material creation
   const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
   // Create plane geometry
