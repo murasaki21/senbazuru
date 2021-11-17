@@ -37,6 +37,11 @@ body {
   text-align: center;
 }
 
+p{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 h1 {
   color: #FFd6FF;
   text-align: center;
