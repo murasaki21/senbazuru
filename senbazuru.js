@@ -186,20 +186,6 @@ function init() {
   // Insert completed floor into the scene
   scene.add(floor);
 
-  // Crane image
-  // Load image as texture
-  /*const texture = new THREE.TextureLoader().load( "../senbazuru/cranes.JPG");
-  // Immediately use the texture for material creation
-  const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
-  // Create plane geometry
-  const geometry = new THREE.PlaneGeometry( 32, 16 );
-  // Apply image texture to plane geometry
-  const plane = new THREE.Mesh( geometry, material );
-  // Position plane geometry
-  plane.position.set(0 , 15 , -15);
-  // Place plane geometry
-  scene.add( plane );*/
-
   // Generate objects (cubes) *replace with cranes*
   const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
 
