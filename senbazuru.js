@@ -257,13 +257,13 @@ function init() {
 }
 
   // Define animate loop
-  function animate() {
+  /*function animate() {
     controls.update();
     requestAnimationFrame(animate);
     var delta = clock.getDelta();
     if (mixer) mixer.update(delta);
     render();
-  }
+  }*/
 
   // Define the render loop
   function render() {
@@ -291,6 +291,14 @@ function onWindowResize() {
 
 // Animation function
 function animate() {
+  // Define crane animate loop
+  controls.update();
+  requestAnimationFrame(animate);
+  var delta = clock.getDelta();
+  if (mixer) mixer.update(delta);
+  render();
+
+  //controls to move around
   requestAnimationFrame(animate);
 
   const time = performance.now();
