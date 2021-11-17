@@ -13,7 +13,7 @@ import {
 } from "../senbazuru/sourceJS/GLTFLoader.js";
 
 // Establish variables
-let camera, scene, renderer, controls;
+let camera, scene, renderer, controls, mesh;
 
 const objects = [];
 let raycaster;
@@ -225,7 +225,7 @@ function init() {
   }*/
   // Load preanimated model, add material, and add it to the scene
   const loader = new GLTFLoader().load(
-    "./gltfs/AnimatedCrane.glb",
+    "../gltfs/AnimatedCrane.glb",
     function(gltf) {
       gltf.scene.traverse(function(child) {
         if (child.isMesh) {
