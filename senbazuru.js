@@ -186,7 +186,7 @@ function init() {
   // Insert completed floor into the scene
   scene.add(floor);
 
-  // Generate objects (cubes) *replace with cranes*
+//---Generate objects (cubes) *replace with cranes*---//
   /*const boxGeometry = new THREE.BoxGeometry(20, 20, 20).toNonIndexed();
 
   position = boxGeometry.attributes.position;
@@ -225,12 +225,13 @@ function init() {
     objects.push(box);
   }*/
 
+//---crane code---//
   // Material to be added to static model
 var newMaterial2 = new THREE.MeshStandardMaterial({
   color: 0x99B9FF
 });
 
-let mesh2;
+let crane;
 // Load static model, add material, and add it to the scene
 const loader2 = new GLTFLoader().load(
   "../senbazuru/GLTFS/AnimatedCrane.glb",
@@ -242,21 +243,28 @@ const loader2 = new GLTFLoader().load(
       }
     });
     // set position and scale
-    mesh2 = gltf.scene;
-    mesh2.position.set(0, 0, 500);
-    mesh2.rotation.set(0, 0, 0);
-    mesh2.scale.set(5, 5, 5);
+    crane = gltf.scene;
+    crane.position.set(0, 0, 500);
+    crane.rotation.set(0, 0, 0);
+    crane.scale.set(5, 5, 5);
 
     for (let i = 0; i < 1000; i++) {
-      const mesh2Material = new THREE.MeshStandardMaterial({
+      const craneMaterial = new THREE.MeshStandardMaterial({
         //specular: 0xffffff,
         flatShading: true,
         vertexColors: true
       });
+
+    const crane = new THREE.Mesh(craneGeometry, craneMaterial);
+    crane.position.x = Math.floor(Math.random() * 20 * 10) * 20;
+    crane.position.y = Math.floor(Math.random() * 20) * 20 * 10;
+    crane.position.z = Math.floor(Math.random() * 20 * 10) * 20;
+
     // Add model to scene
-    scene.add(mesh2);
+    scene.add(crane);
       }
     });
+
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
