@@ -227,7 +227,7 @@ function init() {
 
   // Material to be added to static model
 var newMaterial2 = new THREE.MeshStandardMaterial({
-  color: 0x9dc7ff
+  color: 0x99B9FF
 });
 
 let mesh2;
