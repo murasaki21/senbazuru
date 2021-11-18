@@ -227,9 +227,9 @@ function init() {
 
 //---crane code---//
   // Material to be added to static model
-var newMaterial2 = new THREE.MeshStandardMaterial({
-  color: 0x99B9FF
-});
+//var newMaterial2 = new THREE.MeshStandardMaterial({
+//  color: 0x99B9FF
+//});
 
 let crane;
 // Load static model, add material, and add it to the scene
@@ -244,9 +244,23 @@ const loader2 = new GLTFLoader().load(
     });
     // set position and scale
     crane = gltf.scene;
-    crane.position.set(0, 0, 500);
-    crane.rotation.set(0, 0, 0);
-    crane.scale.set(5, 5, 5);
+  //  crane.position.set(0, 0, 500);
+  //  crane.rotation.set(0, 0, 0);
+  //  crane.scale.set(5, 5, 5);
+    const craneGeometry = new THREE.craneGeometry(20, 20, 20).toNonIndexed();
+
+    position = craneGeometry.attributes.position;
+    const colorsCrane = [];
+
+    for (let i = 0, l = position.count; i < l; i++) {
+      color.setHSL(Math.random() * 0.3 + 0.5, 0, Math.random() * 0.25 + 0.75);
+      colorsCrane.push(color.r, color.g, color.b);
+    }
+
+    craneGeometry.setAttribute(
+      "color",
+      new THREE.Float32BufferAttribute(colorsCrane, 3)
+    );
 
     for (let i = 0; i < 1000; i++) {
       const craneMaterial = new THREE.MeshStandardMaterial({
