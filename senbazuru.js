@@ -243,9 +243,9 @@ const loader2 = new GLTFLoader().load(
     });
     // set position and scale
     mesh2 = gltf.scene;
-    mesh2.position.set(0, 0, 100);
+    mesh2.position.set(0, 0, 0);
     mesh2.rotation.set(0, 0, 0);
-    mesh2.scale.set(3, 3, 3);
+    mesh2.scale.set(5, 5, 5);
 
     for (let i = 0; i < 1000; i++) {
       const mesh2Material = new THREE.MeshStandardMaterial({
