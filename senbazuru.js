@@ -239,7 +239,7 @@ const loader2 = new GLTFLoader().load(
     // Scan loaded model for mesh and apply defined material if mesh is present
     gltf.scene.traverse(function(child) {
       if (child.isMesh) {
-        child.material = newMaterial2;
+        child.material = craneMaterial;
       }
     });
     // set position and scale
