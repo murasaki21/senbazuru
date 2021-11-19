@@ -216,9 +216,9 @@ function init() {
     );
 
     const box = new THREE.Mesh(boxGeometry, boxMaterial);
-    box.position.x = Math.floor(Math.random() * 20 * 40;
-    box.position.y = Math.floor(Math.random() * 20 * 20;
-    box.position.z = Math.floor(Math.random() * 20 * 40;
+    box.position.x = Math.floor(Math.random() * 20) * 40;
+    box.position.y = Math.floor(Math.random() * 20) * 20;
+    box.position.z = Math.floor(Math.random() * 20) * 40;
 
     // Insert completed boxes into the scene
     scene.add(box);
@@ -227,9 +227,9 @@ function init() {
 
 //---crane code---//
   // Material to be added to static model
-//var newMaterial2 = new THREE.MeshStandardMaterial({
-//  color: 0x99B9FF
-//});
+var newMaterial2 = new THREE.MeshStandardMaterial({
+  color: 0x99B9FF
+});
 
 let crane;
 // Load static model, add material, and add it to the scene
